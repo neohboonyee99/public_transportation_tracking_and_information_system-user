@@ -215,7 +215,7 @@ public class RouteNumberETAFragment extends Fragment {
                 if (routeNumberList.get(i).getStopsList().size() != 0) {
                     for (int j = 0; j < routeNumberList.get(i).getStopsList().size(); j++) {
 
-                        Call<JsonObject> getBus = serverService.getBus(routeNumberList.get(i).getStopsList().get(j).getStopsName());
+                        Call<JsonObject> getBus = serverService.getBusByRouteNum(routeNumberList.get(i).getRouteNumber(), routeNumberList.get(i).getStopsList().get(j).getStopsName());
                         int finalJ = j;
                         int finalI = i;
                         getBus.enqueue(new Callback<JsonObject>() {

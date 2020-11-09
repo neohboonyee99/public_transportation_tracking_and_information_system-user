@@ -32,6 +32,13 @@ public interface ServerService {
             @Field("stop_name") String stopName
     );
 
+    @POST("getBusByRouteNum.php")
+    @FormUrlEncoded
+    Call<JsonObject> getBusByRouteNum(
+            @Field("route_number") String routeNum,
+            @Field("stop_name") String stopName
+    );
+
     @POST("getBusStopsDetails.php")
     @FormUrlEncoded
     Call<JsonObject> getBusStopLatLng(
