@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/routePlanning"
+        android:title="@string/route_planning_text"
+        android:icon="@drawable/ic_location">
+
+    </item>
+
+    <item android:id="@+id/nearByBusStop"
+        android:title="@string/nearby_stops_text"
+        android:icon="@drawable/ic_bus">
+
+    </item>
+
+    <item android:id="@+id/routeNumber"
+        android:title="@string/view_route_text"
+        android:icon="@drawable/ic_route">
+
+    </item>
+
+</menu>

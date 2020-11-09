@@ -1,4 +1,27 @@
 <resources>
     <string name="app_name">Public_Transportation_User_Application</string>
     <string name="title_activity_maps">Map</string>
+    <string name="starting_location_text">Starting Location</string>
+    <string name="destination_text">Destination</string>
+    <string name="current_location_text">Current Location</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_text">Search</string>
+    <string name="plan_route_text">Plan Route</string>
+    <string name="nearby_stops_text">Nearby</string>
+    <string name="route_planning_text">Planning</string>
+    <string name="view_route_text">Routes</string>
+    <string name="routing_details_available">Routing Details Available</string>
+    <string name="msg_dialog_text">Do you wish to plan the route to the destination selected?</string>
+    <string name="route_planning_preferences_text">Route Planning Preferences</string>
+    <string name="less_walking_text">Less Walking</string>
+    <string name="fewer_transfer_text">Fewer Transfer</string>
+    <string name="confirm_text">Confirm</string>
+    <string name="route_details_text">Route Details</string>
+    <string name="fare_text">Fare</string>
+    <string name="duration_text">Duration</string>
+    <string name="route_planned_details_text">Route Planned Details</string>
+    <string name="nearby_bus_stop_eta_text">Nearby Bus Stop ETA</string>
+    <string name="no_data_found_text">No Data Found!</string>
+    <string name="route_number_eta_text">Route Number ETA</string>
 </resources>
