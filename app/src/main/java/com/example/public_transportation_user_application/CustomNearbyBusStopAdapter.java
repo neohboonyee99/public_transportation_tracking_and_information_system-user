@@ -3,10 +3,13 @@ package com.example.public_transportation_user_application;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -44,12 +47,14 @@ public class CustomNearbyBusStopAdapter extends RecyclerView.Adapter<CustomNearb
     class CustomViewHolder extends RecyclerView.ViewHolder{
 
         TextView stopsNameTV, etaTV;
+        ImageView imageBusStopIV;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
 
             stopsNameTV = itemView.findViewById(R.id.stopsNameTV);
             etaTV = itemView.findViewById(R.id.etaTV);
+            imageBusStopIV = itemView.findViewById(R.id.nearByBusStopItemIV);
 
         }
     }

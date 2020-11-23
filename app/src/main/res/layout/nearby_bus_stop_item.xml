@@ -24,7 +24,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/nearByBusStopItemIV"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="16dp"
@@ -34,7 +34,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/stops_icon" />
+                app:srcCompat="@drawable/ic_bus_stops"
+                tools:ignore="VectorDrawableCompat" />
 
             <TextView
                 android:id="@+id/stopsNameTV"
@@ -48,7 +49,7 @@
                 android:textColor="@color/appColor"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintStart_toEndOf="@+id/nearByBusStopItemIV"
                 app:layout_constraintTop_toBottomOf="@+id/etaTV" />
 
             <TextView

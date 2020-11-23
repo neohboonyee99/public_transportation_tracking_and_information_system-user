@@ -73,9 +73,8 @@ public class GetDirectionData extends AsyncTask<Object, String , String> {
     @Override
     public void onPostExecute(String s) {
         StringBuilder sb;
-        JSONObject transitDetails,arrival_stops, departure_stops,jsonObject3;
-        JSONArray steps2;
-        String travel_mode,travel_mode2;
+        JSONObject transitDetails,arrival_stops, departure_stops;
+        String travel_mode;
         sb = new StringBuilder();
         try{
             JSONObject jsonObject = new JSONObject(s);
@@ -106,14 +105,8 @@ public class GetDirectionData extends AsyncTask<Object, String , String> {
                     sb.append("Arrival Bus Stop:\n" + arrival_stops.getString("name") + "\n\n");
                     sb.append("Get off from the bus.\n\n");
                 }
-
-
-               // Log.e("TESTING1", jsonObject2.getString("travel_mode"));
             }
-
             routeDetails = sb.toString();
-
-
             int count2 = polyline_array.length;
 
             for(int i=0; i< count2; i++){
@@ -121,7 +114,6 @@ public class GetDirectionData extends AsyncTask<Object, String , String> {
                 options2.color(Color.BLUE);
                 options2.width(10);
                 options2.addAll(PolyUtil.decode(polyline_array[i]));
-
                 mMap.addPolyline(options2);
             }
         } catch (JSONException e) {

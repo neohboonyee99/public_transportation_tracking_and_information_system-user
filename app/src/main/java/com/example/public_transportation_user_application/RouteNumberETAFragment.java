@@ -47,7 +47,6 @@ public class RouteNumberETAFragment extends Fragment {
     CustomRouteNumberAdapter adapter;
     SwipeRefreshLayout swipeRefreshLayout;
     List<String> busStop;
-    List<Stops> stopList;
     List<RouteNumber> routeNumberList;
     String responseMsg,responseMsg1;
     RecyclerView.LayoutManager mLayoutManager;
@@ -103,9 +102,10 @@ public class RouteNumberETAFragment extends Fragment {
                     JsonArray stops = jsonObject.get("bus_route").getAsJsonArray();
                     int position = 0;
                     for(JsonElement JO : stops){
-
+                        busStop = new ArrayList<>();
                         JsonObject route = JO.getAsJsonObject();
                         RouteNumber routeObj = new RouteNumber();
+                        List<Stops> temp = new ArrayList<>();
                         routeObj.setRouteNumber(route.get("route_number").getAsString());
                         busStop.add(route.get("1st_stop_go").toString());
                         busStop.add(route.get("2nd_stop_go").toString());
@@ -147,7 +147,7 @@ public class RouteNumberETAFragment extends Fragment {
                         busStop.add(route.get("18th_stop_back").toString());
                         busStop.add(route.get("19th_stop_back").toString());
                         busStop.add(route.get("20th_stop_back").toString());
-                        List<Stops> temp = new ArrayList<>();
+
                         for (int j=0;j<busStop.size(); j++) {
                             if (!busStop.get(j).equals("null")) {
                                 ServerService serverService = RetrofitClient.getClient(ServerService.BASE_URL).create(ServerService.class);
@@ -173,7 +173,6 @@ public class RouteNumberETAFragment extends Fragment {
                                             temp.add(stop);
                                             routeNumberList.get(finalPosition).setStopsList(temp);
                                             loadData();
-
                                         }
                                     }
 
@@ -188,6 +187,7 @@ public class RouteNumberETAFragment extends Fragment {
                             }
                             routeObj.setStopsList(temp);
                         }
+                        routeObj.setStopsList(temp);
                         routeNumberList.add(routeObj);
                         swipeRefreshLayout.setRefreshing(false);
                         position ++;

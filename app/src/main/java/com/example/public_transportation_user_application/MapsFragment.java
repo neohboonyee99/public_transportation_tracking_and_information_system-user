@@ -168,12 +168,12 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
         //Initialise Places
         if (!Places.isInitialized()) {
-            Places.initialize(getContext(), "AIzaSyAxBOsTH4aJqTag3XShPtscTs2Y4-690Fw");
+            Places.initialize(Objects.requireNonNull(getContext()), "AIzaSyAxBOsTH4aJqTag3XShPtscTs2Y4-690Fw");
         }
 
 
         // Create a new Places client instance.
-        placesClient = Places.createClient(getContext());
+        placesClient = Places.createClient(Objects.requireNonNull(getContext()));
 
         //Set Edit Text non focusable
         destination.setFocusable(false);
@@ -210,7 +210,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode ==100 && resultCode == Activity.RESULT_OK){
-            Place place = Autocomplete.getPlaceFromIntent(data);
+            Place place = Autocomplete.getPlaceFromIntent(Objects.requireNonNull(data));
 
             destination.setText(place.getName());
             destinationLocation = place.getLatLng();
@@ -225,7 +225,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         else if(resultCode == AutocompleteActivity.RESULT_ERROR){
             //When Error
             //Initialise status
-            Status status = Autocomplete.getStatusFromIntent(data);
+            Status status = Autocomplete.getStatusFromIntent(Objects.requireNonNull(data));
             //Display Msg
             Toast.makeText(getContext(), status.getStatusMessage(), Toast.LENGTH_SHORT).show();
 

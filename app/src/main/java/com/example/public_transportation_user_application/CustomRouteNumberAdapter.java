@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 
@@ -40,7 +42,8 @@ public class CustomRouteNumberAdapter extends RecyclerView.Adapter<CustomRouteNu
 
     @Override
     public void onBindViewHolder(@NonNull CustomRouteNumberAdapter.CustomViewHolder holder, int position) {
-        int totalStops; String routeNumber, totalStopsStr="";
+        int totalStops;
+        String routeNumber, totalStopsStr="";
 
 
         RouteNumber tempRoute = routeNumberList.get(position);
@@ -60,12 +63,15 @@ public class CustomRouteNumberAdapter extends RecyclerView.Adapter<CustomRouteNu
     class CustomViewHolder extends RecyclerView.ViewHolder{
         TextView totalStopsTV, routeNumberTV;
         CardView routeNumberCV;
+        ImageView routeNumIV;
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
 
             totalStopsTV = itemView.findViewById(R.id.totalStopsTV);
             routeNumberTV = itemView.findViewById(R.id.routeNumberTV);
             routeNumberCV = itemView.findViewById(R.id.routeNumberCV);
+            routeNumIV = itemView.findViewById(R.id.routeNumberItemIV);
+
 
 
             routeNumberCV.setOnClickListener(v -> {
